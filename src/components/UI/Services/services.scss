@@ -1,0 +1,107 @@
+.services {
+  text-align: center;
+  padding: 2rem;
+
+  .services_wrapper {
+    max-width: 1250px;
+    margin: auto;
+  }
+
+  .services_title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 49px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 1rem;
+  }
+
+  .services_subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #666;
+  }
+
+  .services_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Ekranda har bir qatorda 3 ta karta
+    gap: 2.5rem;
+  }
+  .service_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+
+    &.service_card--blue {
+      background-color: #e6f0ff;
+    }
+
+    &.service_card--green {
+      background-color: #dff6f0;
+    }
+
+    &.service_card--pink {
+      background-color: #ffe6f2;
+    }
+
+    &.service_card--purple {
+      background-color: #ece6ff;
+    }
+
+    &.service_card--teal {
+      background-color: #e6f9ff;
+    }
+
+    &.service_card--yellow {
+      background-color: #fff8e6;
+    }
+
+    .service_card_title {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .service_card_description {
+      font-size: 0.9rem;
+      margin: 30px 0;
+
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 23px;
+
+      color: #454545;
+    }
+
+    .service_card_button {
+      background-color: #152032;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        background-color: #1d4e89; // Ko'k-siyohrang ohang
+        transform: translateY(-3px);
+      }
+
+      &:active {
+        background-color: #103f69; // Qorong'iroq ko'k
+        transform: translateY(0);
+      }
+    }
+  }
+  &_top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}
