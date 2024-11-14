@@ -46,7 +46,7 @@
     height: 30px;
     background-color: gray;
   }
-  &_item a {
+  &_item {
     font-family: "Open Sans";
     font-style: normal;
     font-weight: 600;
@@ -63,7 +63,26 @@
       transition: 0.5s linear;
       color: #009688;
     }
+    a {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      color: #686868;
+
+      &:hover {
+        transition: 0.5s linear;
+        color: #009688;
+      }
+      &:active {
+        transition: 0.5s linear;
+        color: #009688;
+      }
+    }
   }
+
   &_btn {
     display: flex;
     flex-direction: row;
@@ -81,7 +100,21 @@
     color: white;
     font-weight: 600;
   }
-  &_programs{
-    width: 120px;
+  &_programs {
+    width: 130px;
+
+    border: none !important;
+    outline: none;
+    option {
+      text-align: left !important;
+
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 20px;
+
+      color: #686868 !important;
+    }
   }
 }
