@@ -1,0 +1,177 @@
+.ourmedia {
+  width: 100%;
+  margin-bottom: 50px;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 1250px;
+    margin: 0 auto; /* Ekranni to'ldirishi uchun markazda joylashadi */
+    padding: 0 20px; /* Ekran kichrayganda chetidan joy qolishi uchun */
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    text-align: center;
+    width: 100%; /* Kenglikni to'liq to'ldiradi */
+  }
+
+  &__slider {
+    text-align: center;
+    width: 100%; /* Kenglikni to'liq to'ldiradi */
+  }
+
+  &__slider__title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  &__cards {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 100%; /* Kenglikni to'liq to'ldiradi */
+    justify-content: center;
+  }
+
+  &__card {
+    min-width: 300px;
+    flex: 1; /* Kartalar ekranni to'ldirish uchun moslashadi */
+    transition: transform 0.5s ease;
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 15px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+
+      p {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0;
+      }
+    }
+  }
+
+  &__playButton {
+    background: #00a89d;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .ourmedia__control {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #00a89d;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    &.right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &.left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%; /* Kenglikni to'liq to'ldiradi */
+  }
+}
+
+.ourmedia__cards__wrapper {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.ourmedia__card {
+  min-width: 32%; /* 3 ta karta uchun */
+  transition: transform 0.5s ease;
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+}
+
+.ourmedia__control {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #00a89d;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
