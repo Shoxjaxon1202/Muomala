@@ -1,0 +1,42 @@
+.footer {
+  width: 100%;
+  background: #009688;
+
+  &_wrapper {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  &_list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  &_item a {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #ffffff;
+  }
+  hr {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    border: none;
+    margin-bottom: 30px;
+  }
+  &_text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #cfd3d7;
+  }
+}

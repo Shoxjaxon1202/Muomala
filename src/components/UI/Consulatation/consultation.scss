@@ -1,0 +1,166 @@
+.consultation {
+  width: 100%;
+  margin-bottom: 50px;
+
+  &_wrapper {
+    max-width: 1250px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: hidden;
+    width: 100%;
+    overflow: hidden;
+  }
+  &__left {
+    width: 60%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 45px 35px;
+    gap: 178px;
+    background: #fae9d3;
+
+    border-radius: 10px 0px 0px 10px;
+
+    .slick-list {
+      margin-bottom: 130px !important;
+    }
+  }
+  &__right {
+    width: 40%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 45px 35px;
+    gap: 28px;
+    background: #f9f7f3;
+    border-radius: 0px 10px 10px 0px;
+  }
+  &__title {
+    width: 100%;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 39px;
+    color: #d28527;
+    margin-bottom: 15px;
+  }
+  &__text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+    color: #d28527;
+  }
+  &__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    color: #152032;
+  }
+  &__description {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #152032;
+  }
+  &__input {
+    box-sizing: border-box;
+    width: 371px;
+    height: 47px;
+    background: #ffffff;
+    border: 1px solid rgba(104, 104, 104, 0.5);
+    border-radius: 7px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__checkbox-label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #152032;
+
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  &__checkbox {
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+  }
+  &__submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 165px;
+    gap: 10px;
+
+    width: 371px;
+    height: 47px;
+
+    background: #009688;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #ffffff;
+  }
+}
+
+.consultation {
+  &_left {
+    .slick-slide {
+      transition: transform 0.5s ease-in-out;
+    }
+  }
+
+  &__card {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__input {
+    &:focus {
+      border-color: #009688;
+      box-shadow: 0 0 5px rgba(0, 150, 136, 0.5);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+  }
+
+  &__submit {
+    &:hover {
+      background-color: #00796b;
+      transition: background-color 0.3s;
+    }
+  }
+}
