@@ -12,6 +12,7 @@ const Navbar = () => {
       navigate(event.target.value);
     }
   };
+
   return (
     <div className="navbar">
       <div className="navbar_wrapper">
@@ -24,13 +25,21 @@ const Navbar = () => {
           </li>
           <li className="navbar_item">
             <select className="navbar_programs" onChange={handleSelectChange}>
-              <option className="navbar_item" value="">Programs</option>
+              <option className="navbar_item" value="">
+                Programs
+              </option>
               <option className="navbar_item" value="/programs">
                 International educational programs
               </option>
-              <option className="navbar_item" value="/programs">Specialized courses</option>
-              <option className="navbar_item" value="/programs">Islamic Finance Literacy Course</option>
-              <option className="navbar_item" value="/programs">Certification program</option>
+              <option className="navbar_item" value="/programs">
+                Specialized courses
+              </option>
+              <option className="navbar_item" value="/programs">
+                Islamic Finance Literacy Course
+              </option>
+              <option className="navbar_item" value="/programs">
+                Certification program
+              </option>
             </select>
           </li>
           <li className="navbar_item">
@@ -47,7 +56,9 @@ const Navbar = () => {
             <option value="uz">Uzb</option>
           </select>
           <div className="navbar_palka"></div>
-          <button className="navbar_btn">Sign in</button>
+          <NavLink to={"/login"}>
+            <button className="navbar_btn">Sign in</button>
+          </NavLink>
         </div>
       </div>
     </div>
