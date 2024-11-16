@@ -6,7 +6,7 @@ import Team from "../components/UI/Team/Team";
 import Client from "../components/UI/Client/Client";
 import Media from "../components/UI/Media/Media";
 import Say from "../components/UI/Say/Say";
-import Faq from "../components/UI/Faq/faq";
+import Faq from "../components/UI/Faq/Faq";
 import Consultation from "../components/UI/Consulatation/Consultation";
 
 const Home = () => {
