@@ -9,6 +9,7 @@ import Say from "../components/UI/Say/Say";
 import Faq from "../components/UI/Faq/Faq";
 import Consultation from "../components/UI/Consulatation/Consultation";
 
+import "../Styles/home.scss"
 const Home = () => {
   return (
     <div className="home">
