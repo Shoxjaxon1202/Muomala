@@ -10,6 +10,10 @@
     gap: 20px;
     padding: 20px 0;
   }
+  &_language {
+    width: 30px;
+    height: 30px;
+  }
   &_middle {
     width: 35%;
     display: flex;
@@ -19,8 +23,6 @@
   &_right {
     display: flex;
     align-items: center;
-    gap: 20px;
-
     select {
       display: flex;
       flex-direction: row;
@@ -45,6 +47,8 @@
     width: 1px;
     height: 30px;
     background-color: gray;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   &_item {
     font-family: "Open Sans";
@@ -54,6 +58,8 @@
     line-height: 20px;
     text-align: center;
     color: #686868;
+    display: flex;
+    align-items: center;
 
     &:hover {
       transition: 0.5s linear;
@@ -100,8 +106,19 @@
     color: white;
     font-weight: 600;
   }
+  &_hr {
+    width: 100% !important;
+    border: 0.5px solid #686868 !important;
+    transform: rotate(-0.02deg) !important;
+  }
+
   &_programs {
-    width: 130px;
+    width: 100px;
+    color: #686868;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
 
     border: none !important;
     outline: none;
@@ -115,6 +132,74 @@
       line-height: 20px;
 
       color: #686868 !important;
+
+      position: absolute;
+      flex-direction: column;
+      border-radius: 8px;
+      border: 1px solid #686868;
+      padding: 20px;
+      background-color: #fff;
+    }
+  }
+}
+
+.navbar {
+  &_arrow{
+    margin-left: 20px;
+  }
+  &__link {
+    color: #686868;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  &__link:hover,
+  &__link:active {
+    text-decoration: none;
+    color: #009688;
+  }
+  &__ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  &__dropdown {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid #686868;
+    padding: 20px;
+
+    background-color: #fff;
+    z-index: 7;
+    gap: 10px;
+    top: 20px;
+    width: 290px;
+    &:hover,
+    &.active {
+      .navbar__droplink {
+        color: #009688;
+      }
+    }
+  }
+  &__hr {
+    border: none;
+    border-top: 1px solid #686868;
+  }
+  &__droplink {
+    height: 25px;
+    padding-top: 3px;
+    position: relative;
+    &:hover {
+      svg {
+        fill: #009688;
+        transition: all 0.3s;
+      }
+      .navbar__dropdown {
+        display: flex;
+      }
     }
   }
 }
