@@ -5,10 +5,10 @@ import "./footer.scss";
 import logo from "../../assets/img/logo.png";
 import { NavLink } from "react-router-dom";
 
-import rasm1 from "../../assets/img/Vector.png";
-import rasm2 from "../../assets/img/instagram.png";
-import rasm3 from "../../assets/img/facebook-02.png";
-import rasm4 from "../../assets/img/twitter.png";
+import rasm1 from "../../assets/img/youtube.png";
+import rasm2 from "../../assets/img/facebook.png";
+import rasm3 from "../../assets/img/twitter.png";
+import rasm4 from "../../assets/img/instagram.png";
 
 const Footer = () => {
   return (

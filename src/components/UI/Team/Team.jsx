@@ -2,9 +2,9 @@ import React from "react";
 import Slider from "react-slick";
 
 import rasm1 from "../../../assets/img/Vector.png";
-import rasm2 from "../../../assets/img/instagram.png";
+import rasm2 from "../../../assets/img/instagram2.png";
 import rasm3 from "../../../assets/img/facebook-02.png";
-import rasm4 from "../../../assets/img/twitter.png";
+import rasm4 from "../../../assets/img/twitter2.png";
 
 import leftimg from "../../../assets/img/Pexels Photo by Italo Melo.png";
 
