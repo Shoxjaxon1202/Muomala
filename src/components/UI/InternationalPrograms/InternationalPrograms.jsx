@@ -150,9 +150,9 @@ const InternationalPrograms = () => {
                   className="pro-services__card-image"
                 />
                 <span className="pro-services__card-students">
-                    <img src={foto1} alt="" className="pro-services-img" />
-                    <img src={foto2} alt="" className="pro-services-img" />
-                  + {service.students} students
+                  <img src={foto1} alt="" className="pro-services-img" />
+                  <img src={foto2} alt="" className="pro-services-img" />+{" "}
+                  {service.students} students
                 </span>
                 <div className="pro-services__card-content">
                   <span className="pro-services__card-date">

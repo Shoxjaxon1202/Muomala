@@ -1,9 +1,10 @@
 import React from "react";
+import Consultation from "../components/UI/Consulatation/Consultation";
 
 const Contact = () => {
   return (
     <div>
-      <h2>Conatct</h2>
+      <Consultation />
     </div>
   );
 };
