@@ -1,9 +1,9 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./Pages/Home";
 import Programs from "./Pages/Programs";
 import Tools from "./Pages/Tools";
-// import Contact from "./Pages/Contact";
+
 import Navbar from "./components/Navbar/Navbar";
 
 import "slick-carousel/slick/slick.css";
@@ -18,23 +18,44 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 
 function App() {
+  const location = useLocation().pathname;
+
   return (
-    <div className="Layout">
-      <ToastContainer />
-      <Navbar />
-      <div className="routes">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/programs" element={<Programs />} />
-          <Route path="/tools" element={<Tools />} />
-          <Route path="/contact" element={<Consultation />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
-      <Footer />
-    </div>
+    <>
+      {location !== "/login" && location !== "/register" ? (
+        <div className="Layout">
+          <ToastContainer />
+          <Navbar />
+          <div className="routes">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/programs" element={<Programs />} />
+              <Route path="/tools" element={<Tools />} />
+              <Route path="/contact" element={<Consultation />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+          <Footer />
+        </div>
+      ) : (
+        <div className="Layout">
+          <ToastContainer />
+          <div className="routes">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/programs" element={<Programs />} />
+              <Route path="/tools" element={<Tools />} />
+              <Route path="/contact" element={<Consultation />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
