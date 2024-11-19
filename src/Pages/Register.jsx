@@ -8,9 +8,12 @@ import "../Styles/login.scss";
 import logo from "../assets/img/navbarLogo.png";
 import brat from "../assets/img/Image.png";
 import qiz from "../assets/img/illustration image.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Register = () => {
+  const navigate = useNavigate();
+
   const { register, handleSubmit } = useForm();
   const countries = countryList().getData();
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -31,6 +34,8 @@ const Register = () => {
 
   const onSubmit = (data) => {
     console.log("Selected country:", selectedCountry);
+    toast.success("You are registered");
+    navigate("/");
   };
 
   const handleCountryChange = (selectedOption) => {
@@ -85,6 +90,7 @@ const Register = () => {
             </span>
             <span className="login_span">
               <Select
+                required
                 options={options}
                 placeholder="Select your country"
                 onChange={handleCountryChange}

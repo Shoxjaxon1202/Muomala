@@ -1,13 +1,21 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import "../Styles/login.scss";
 
 import logo from "../assets/img/navbarLogo.png";
 import brat from "../assets/img/Image.png";
 import qiz from "../assets/img/illustration image.png";
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  function handleSubmit() {
+    toast.success("You are logged in");
+    navigate("/");
+  }
+
   return (
     <div className="login">
       <div className="login_wrapper">
@@ -20,7 +28,7 @@ const Login = () => {
             </div>
           </div>
           <h2 className="login_title">Get started</h2>
-          <form className="login_form">
+          <form onSubmit={handleSubmit} className="login_form">
             <span className="login_span">
               <input
                 required
