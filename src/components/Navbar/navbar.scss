@@ -105,7 +105,44 @@
     border: none;
     color: white;
     font-weight: 600;
+    cursor: pointer;
+
+    transition: all 0.3s ease; // Silliq o'tish uchun
+
+    &:hover {
+      background: #00796b; // Quyuqroq yashil rang
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); // Yengil soya
+      transform: translateY(-2px); // Biroz yuqoriga ko'tariladi
+    }
+
+    &:active {
+      background: #004d40; // Yanada quyuqroq rang
+      box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.3); // Ichki soya
+      transform: translateY(1px); // Pastga bosiladi
+    }
+
+    &:focus-visible {
+      animation: pulse 1.5s infinite; // Fokusda pulsatsiya animatsiyasi
+      outline: none; // Fokus chegarasini olib tashlash
+    }
   }
+
+  // Pulsatsiya animatsiyasi
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(0, 150, 136, 0.5);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px 5px rgba(0, 150, 136, 0.3);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(0, 150, 136, 0);
+    }
+  }
+
   &_hr {
     width: 100% !important;
     border: 0.5px solid #686868 !important;
@@ -144,7 +181,7 @@
 }
 
 .navbar {
-  &_arrow{
+  &_arrow {
     margin-left: 20px;
   }
   &__link {

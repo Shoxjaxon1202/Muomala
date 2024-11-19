@@ -9,14 +9,7 @@ import ru from "../../assets/img/russia.png";
 import uz from "../../assets/img/uzbekistan.png";
 
 const Navbar = () => {
-  const navigate = useNavigate();
   const [languageImage, setLanguageImage] = useState(en);
-
-  const handleSelectChange = (event) => {
-    if (event.target.value) {
-      navigate(event.target.value);
-    }
-  };
 
   const handleSelectLanguageChange = (event) => {
     const selectedLanguage = event.target.value;
