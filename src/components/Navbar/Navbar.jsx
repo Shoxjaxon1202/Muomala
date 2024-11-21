@@ -26,14 +26,16 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navbar_wrapper">
         <div className="navbar_left">
-          <img src={logo} alt="Logo" className="navbar_img" />
+          <NavLink to={"/"}>
+            <img src={logo} alt="Logo" className="navbar_img" />
+          </NavLink>
         </div>
         <ul className="navbar_middle">
           <li className="navbar_item">
             <NavLink to={"/"}>Home</NavLink>
           </li>
           <li className="navbar__li">
-            <p className="navbar__link navbar__droplink">
+            <div className="navbar__link navbar__droplink">
               Programs
               <svg
                 width="12"
@@ -60,7 +62,7 @@ const Navbar = () => {
                   Certification program
                 </NavLink>
               </div>
-            </p>
+            </div>
           </li>
           <li className="navbar_item">
             <NavLink to={"/tools"}>Finance Tools</NavLink>

@@ -107,8 +107,12 @@ const InternationalPrograms = () => {
           <h2>Brief information about the course</h2>
           <div className="acardion_items">
             <div className="accordion-item">
-              <button onClick={toggleVideodarslar} className="accordion-header">
-                Videodarslar ▾
+              <button
+                onClick={toggleVideodarslar}
+                className={`accordion-header ${
+                  isVideodarslarOpen ? "open" : ""
+                }`}>
+                Videodarslar <span>▾</span>
               </button>
               <div
                 className={`accordion-content ${
@@ -121,9 +125,12 @@ const InternationalPrograms = () => {
                 </p>
               </div>
             </div>
+
             <div className="accordion-item">
-              <button onClick={toggleTasks} className="accordion-header">
-                Tasks ▾
+              <button
+                onClick={toggleTasks}
+                className={`accordion-header ${isTasksOpen ? "open" : ""}`}>
+                Tasks <span>▾</span>
               </button>
               <div className={`accordion-content ${isTasksOpen ? "open" : ""}`}>
                 <p>

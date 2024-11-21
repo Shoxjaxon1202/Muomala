@@ -33,7 +33,7 @@ const Register = () => {
   }));
 
   const onSubmit = (data) => {
-    console.log("Selected country:", selectedCountry);
+    // console.log("Selected country:", selectedCountry);
     toast.success("You are registered");
     navigate("/");
   };

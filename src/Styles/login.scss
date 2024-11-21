@@ -2,6 +2,9 @@
   margin-top: 10px;
   width: 100%;
   margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &_wrapper {
     position: relative;
     max-width: 1250px;
@@ -40,7 +43,7 @@
   &_left {
     font-family: "Inter" !important;
 
-    margin-top: 80px;
+    margin-top: 60px;
     position: relative;
     a {
       position: absolute;
@@ -157,7 +160,7 @@
     &_img {
       width: 80%;
       height: 480px;
-      margin-bottom: 40px;
+      margin-bottom: 60px;
     }
     &_title {
       font-style: normal;
