@@ -2,6 +2,25 @@
   width: 100%;
   margin-bottom: 50px;
 
+  &_phone {
+    position: relative;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .phone_box {
+    width: 370px;
+  }
+  .PhoneInputInput {
+    box-sizing: border-box;
+    height: 47px;
+    background: #ffffff;
+    border: 1px solid rgba(104, 104, 104, 0.5);
+    border-radius: 7px;
+    padding: 10px;
+  }
+  .error-message {
+    color: red;
+  }
   &_wrapper {
     max-width: 1250px;
     height: 100%;
@@ -87,6 +106,7 @@
     justify-content: space-between;
   }
   &__checkbox-label {
+    margin-top: 20px;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;

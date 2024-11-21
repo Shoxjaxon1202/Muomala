@@ -1,14 +1,15 @@
 .faq {
   width: 100%;
   padding: 20px;
-
   margin-bottom: 80px;
+
   &_wrapper {
     max-width: 1250px;
     margin: auto;
   }
+
   .faq_title {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
@@ -24,79 +25,62 @@
 
   .faq_list {
     display: grid;
-    gap: 15px;
+    gap: 20px;
   }
 
   .faq_card {
     border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 15px;
-    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden; /* Scrollning oldini oladi */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 
-    &.active {
-      border-color: #1e90ff;
-      background-color: #f9f9f9;
+    &:hover {
+      background-color: #f8f8f8;
     }
 
     .faq_question {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 18px;
-      font-weight: 500;
-    }
+      padding: 20px;
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      background-color: #fff;
+      transition: background-color 0.3s ease;
 
-    .faq_icon {
-      position: relative;
-      width: 20px;
-      height: 20px;
+      &:hover {
+        background-color: #f1f1f1;
+      }
 
-      .line {
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background-color: #1e90ff;
-        top: 50%;
-        left: 0;
-        transform-origin: center;
+      .faq_icon {
+        font-size: 24px;
+        color: #1e90ff;
         transition: transform 0.3s ease;
-      }
 
-      .horizontal {
-        transform: translateY(-50%);
-      }
-
-      .vertical {
-        transform: translateY(-50%) rotate(90deg);
-      }
-
-      &.rotate .horizontal {
-        transform: translateY(-50%) rotate(45deg);
-      }
-
-      &.rotate .vertical {
-        transform: translateY(-50%) rotate(-45deg);
+        &.rotate {
+          transform: rotate(45deg); /* "+"ni "x" ga aylantiradi */
+        }
       }
     }
 
     .faq_answer {
-      margin-top: 10px;
+      padding: 20px;
       font-size: 16px;
+      line-height: 1.6;
       color: #333;
       max-height: 0;
       opacity: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease, opacity 0.3s ease;
-    }
+      transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.3s ease;
+      transform: translateY(-10px);
 
-    &.active .faq_answer {
-      max-height: 200px;
-      opacity: 1;
+      &.show {
+        max-height: 500px; /* Tarkib balandligiga moslashtirilgan maksimal balandlik */
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-  }
-
-  .faq_card:hover {
-    background-color: #f1f1f1;
   }
 }

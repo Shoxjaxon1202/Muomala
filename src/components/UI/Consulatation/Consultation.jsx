@@ -5,6 +5,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "react-phone-number-input/style.css";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 
 const Consultation = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +15,7 @@ const Consultation = () => {
     agree: false,
   });
   const [errors, setErrors] = useState({ name: false, phone: false });
+  const [isPhoneComplete, setIsPhoneComplete] = useState(false); // To‘g‘ri raqam to‘liq kiritildimi?
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -22,6 +25,24 @@ const Consultation = () => {
     });
   };
 
+  const handlePhoneChange = (value) => {
+    // Raqamni yangilash va tekshirish
+    if (isPhoneComplete && value.length > formData.phone.length) {
+      // To‘liq bo‘lganidan keyin yangi raqam kiritishga yo‘l qo‘ymaslik
+      return;
+    }
+
+    setFormData({ ...formData, phone: value });
+
+    if (!value || !isValidPhoneNumber(value)) {
+      setErrors((prev) => ({ ...prev, phone: true }));
+      setIsPhoneComplete(false);
+    } else {
+      setErrors((prev) => ({ ...prev, phone: false }));
+      setIsPhoneComplete(true); // To‘g‘ri va to‘liq kiritilgan
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, phone, agree } = formData;
@@ -29,6 +50,7 @@ const Consultation = () => {
 
     let hasError = false;
 
+    // Name validation
     if (name.trim() === "") {
       setErrors((prev) => ({ ...prev, name: true }));
       hasError = true;
@@ -36,6 +58,15 @@ const Consultation = () => {
       setErrors((prev) => ({ ...prev, name: false }));
     }
 
+    // Phone validation
+    if (!phone || !isValidPhoneNumber(phone)) {
+      setErrors((prev) => ({ ...prev, phone: true }));
+      hasError = true;
+    } else {
+      setErrors((prev) => ({ ...prev, phone: false }));
+    }
+
+    // Agree validation
     if (!agree) {
       toast.error("Please agree to the terms before submitting.");
       return;
@@ -49,7 +80,7 @@ const Consultation = () => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              chat_id: "6575316231", // to'g'ri chat_id ni tekshirib ko'ring
+              chat_id: "6575316231", // To'g'ri chat_id ni tekshirib ko'ring
               text: `New Consultation Request:\nName: ${name}\nPhone: ${phone}`,
             }),
           }
@@ -58,6 +89,7 @@ const Consultation = () => {
         if (response.ok) {
           toast.success("Your request has been sent successfully!");
           setFormData({ name: "", phone: "", agree: false });
+          setIsPhoneComplete(false); // Reset holatiga qaytarish
         } else {
           throw new Error("Failed to send the request.");
         }
@@ -112,15 +144,25 @@ const Consultation = () => {
               }`}
             />
 
-            <input
-              required
-              type="number"
-              name="phone"
-              placeholder="Phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className="consultation__input "
-            />
+            {/* Phone Input with international support */}
+            <div className="phone_box">
+              <PhoneInput
+                international
+                defaultCountry="UZ"
+                name="phone"
+                placeholder="Phone"
+                value={formData.phone}
+                onChange={handlePhoneChange}
+                className={`consultation_phone ${
+                  errors.phone ? "consultation__input--error" : ""
+                }`}
+              />
+              {errors.phone && (
+                <span className="error-message">
+                  Enter a valid phone number
+                </span>
+              )}
+            </div>
 
             <label className="consultation__checkbox-label">
               <input
@@ -141,6 +183,7 @@ const Consultation = () => {
           </form>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

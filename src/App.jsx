@@ -12,7 +12,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "react-toastify/dist/ReactToastify.css";
 import LazyLoader from "./components/LazyLoader/LazyLoader";
 
-// Lazy loading pages
 const Home = lazy(() => import("./Pages/Home"));
 const Programs = lazy(() => import("./Pages/Programs"));
 const Tools = lazy(() => import("./Pages/Tools"));
@@ -26,7 +25,7 @@ function App() {
   const isAuthPage = location === "/login" || location === "/register";
 
   return (
-    <Suspense fallback={<LazyLoader/>}>
+    <Suspense fallback={<LazyLoader />}>
       <div className="Layout">
         <ToastContainer />
 
